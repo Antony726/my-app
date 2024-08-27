@@ -24,14 +24,14 @@ function App() {
   const handleVote = async () => {
     try {
       // Check if the voter ID has already voted
-      const checkResponse = await axios.get(`https://voting-backend-pe3b.onrender.com/api/vote/${voterId}`);
+      const checkResponse = await axios.get(`http://localhost:5000/api/vote/${voterId}`);
       if (checkResponse.data.hasVoted) {
         alert('You have already voted!');
         return;
       }
 
       // Submit the vote if not already voted
-      const response = await axios.post('https://voting-backend-pe3b.onrender.com/api/vote', {
+      const response = await axios.post('http://localhost:5000/api/vote', {
         voterId,
         votes: selectedCandidates
       });
