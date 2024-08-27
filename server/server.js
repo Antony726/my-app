@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/voting', {
+mongoose.connect('mongodb+srv://alexantony726:A48woNKMaDMGJU60@kira.24umo.mongodb.net/voting', {
   // Remove deprecated options
   // useNewUrlParser: true,
   // useUnifiedTopology: true
