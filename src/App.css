@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+/* Container for multiple cards */
+.votepanel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows wrapping of cards to the next line */
+  justify-content: center; /* Center the cards horizontally */
+  align-items: center; /* Center the cards vertically (if needed) */
+  min-height: 10vh; /* Make the container at least as tall as the viewport */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Center the title or any other content */
+.title {
+  margin-left: 10%;
+}
+.ace{
+  position: relative;
+}
+.ace img{
+  padding: 20px;
+  width: 250px;
+}
+.rr{
+  color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Title container styling */
+.titletemp {
+  margin: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Card container styling */
+.cardcont {
+  position: relative; /* Ensure the overlay is positioned relative to this container */
+  width: 200px; /* Adjust to fit design */
+  height: 300px; /* Adjust to fit design */
+  margin: 2vw; /* Add spacing between cards */
+  overflow: hidden; /* Hide overflow content */
+  display: flex;
+  flex-direction: column; /* Arrange image and text vertically */
+  align-items: center; /* Center items horizontally */
+  border: 1px solid #ddd; /* Border color for default state */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor for hover effect */
+  transition: transform 0.2s; /* Smooth scaling effect */
+}
+
+/* Hover effect for the entire card */
+.cardcont:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+/* Label styling for the card */
+.cards {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 10px;
+  position: relative; /* Position relative to contain the overlay */
+  width: 100%; /* Ensure it takes the full width of the card */
+  height: 100%; /* Ensure it takes the full height of the card */
+}
+
+/* Image styling */
+.cards .image-container {
+  flex: 8; /* 80% of the card height */
+  width: 100%; /* Full width of the card */
+}
+
+.cards img {
+  width: 100%; /* Make image fit within the container width */
+  height: 90%; /* Make image fit within the container height */
+  object-fit: cover; /* Cover the container area while maintaining aspect ratio */
+  border-bottom: 1px solid #ddd; /* Border between image and text */
+}
+.vv{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-bottom: 100px;
+}
+.vv button{
+  width: 400px;
+  height: 50px;
+  margin-top: 10px;
+  border: none;
+  background-color: lime;
+  font-size: 20px;
+  font-weight: bold;
   color: white;
+  transition: 0.5s ease-in;
+}
+.vv button:hover{
+  background-color: green;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Text styling */
+.cards .text-container {
+  flex: 2; /* 20% of the card height */
+  width: 100%; /* Full width of the card */
+  padding: 10px; /* Add padding to text */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style the name */
+.cards .name {
+  margin: 0; /* Remove margin for text */
+  font-size: 16px; /* Font size for name */
+  color: #333; /* Text color */
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+  position: absolute;
+  opacity: 0; /* Make radio button invisible */
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+/* Style for selected card (when radio button is checked) */
+input[type="radio"]:checked + label {
+  border: 2px solid #00ec0885; /* Green border to indicate selection */
+}
+.kratos{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  
+}
+.year{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 100px;
+  
+}
+.year select{
+  margin-left: 20px;
+  width: 100px;
+  height: 30px;
+  padding-left: 20px;
+}
+.roll{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  
+}
+.roll input{
+  height: 50px;
+  width: 450px;
+  padding-left: 20px;
+}
+/* Green overlay effect for selected card */
+input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 224, 11, 0.3); /* Green overlay gradient */
+  border-radius: 8px; /* Match with cardcont if rounded corners are used */
+  z-index: 2; /* Ensure overlay is on top */
+  pointer-events: none; /* Prevent overlay from blocking clicks */
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.overlay h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.overlay p {
+  font-size: 1.2em;
 }

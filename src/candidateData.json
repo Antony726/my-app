@@ -1,0 +1,24 @@
+{
+  "president": [
+    { "name": "Jerith", "image": "./imgs/jerith.jpg" },
+    { "name": "Parithi", "image": "./imgs/Parithi.jpeg" },
+    { "name": "Rohith", "image": "./imgs/Rohith.jpg" }
+  ],
+  "vice president": [
+    { "name": "Deepak Raj", "image": "./imgs/deepak.jpg" },
+    { "name": "Kanishk Aditya", "image": "./imgs/kanishk.jpeg" },
+    { "name": "Thivaghar", "image": "./imgs/thivagar.jpeg" }
+    
+  ],
+  "secretary": [
+    { "name": "Hari Prasad", "image": "./imgs/hari.jpeg" },
+    
+    { "name": "Mahadevan", "image": "./imgs/mahad.jpeg" },
+    { "name": "Renil Immanuel", "image": "./imgs/renil.jpeg" }
+  ],
+  "joint secretary": [
+    { "name": "Gokul", "image": "./imgs/gokul.jpeg" },
+    { "name": "Muthu", "image": "./imgs/muthu.jpeg" },
+    { "name": "Vishal Siva", "image": "./imgs/vishal.jpeg" }
+  ]
+}
